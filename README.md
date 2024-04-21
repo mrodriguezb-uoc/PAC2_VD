@@ -1,5 +1,7 @@
 # PAC2_VD
-PAC2 de Visualització de Dades (UOC)
+PAC2 de Visualització de Dades (UOC) - Abril de 2024
+
+**MIGUEL ÁNGEL RODRÍGUEZ BARRANCO**
 
 Contingut de les carpetes:
 
