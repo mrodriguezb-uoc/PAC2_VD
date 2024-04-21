@@ -1,0 +1,108 @@
+---
+title: 'M2.959 - Visualització de dades - Aula 1: hexagonal binning'
+author: "Autor: MIGUEL ANGEL RODRIGUEZ BARRANCO"
+date: "Abril 2024"
+output:
+  html_document:
+    highlight: default
+    number_sections: yes
+    theme: cosmo
+    toc: yes
+    toc_depth: 2
+    includes:
+  word_document: default
+  pdf_document:
+    highlight: zenburn
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1 Lectura de dades
+
+## 1.1 Carregar el fitxer de dades
+
+[**Lectura del fitxer i columnes del dataframe**]{.underline}
+
+Llegeixo el fitxer CSV en un dataframe. El dataframe conté 3.663 estudiants americans avaluats a PISA amb els següents 24 atributs:
+
+```{r}
+FILE_NAME = 'pisa_clean.csv'
+ds<-read.csv(FILE_NAME)
+colnames(ds)
+```
+
+Obtinc el tipus de cada variable del dataframe :
+
+```{r}
+library(dplyr)
+glimpse(pisa)
+```
+
+M'interessen sols dues variables:
+
+| ATRIBUT                   | TIPUS TEÒRIC | TIPUS ATORGAT PER R |
+|---------------------------|--------------|---------------------|
+| **minutesPerWeekEnglish** | num          | int                 |
+| **readingScore**          | num          | chr                 |
+
+# 2 Neteja de dades
+
+[**Correcció de la variable readingScore**]{.underline}
+
+La variable **readingScore** és una variable numèrica decimal però que R ha capturat com si fos una variable textual. El motiu és que hi ha tres valors de la variable que estan separats per coma i no per punt. Són els valors: 616,22 // 584,15 // 403,77. Aquests tres valors quedaran substituits per NA.
+
+A continuació transformo la variable **readingScore** a numèrica.
+
+```{r}
+# A numèrica...
+pisa$readingScore <- as.numeric(pisa$readingScore)
+```
+
+Netejo valors missing:
+
+```{r}
+pisa_cleaned <- na.omit(pisa[c("readingScore", "minutesPerWeekEnglish")])
+```
+
+Presento les seves estadístiques bàsiques de les variables de treball:
+
+```{r}
+summary(pisa_cleaned$readingScore)
+summary(pisa_cleaned$minutesPerWeekEnglish)
+```
+
+```{r}
+if(!require(ggplot2)) {
+  install.packages("ggplot2")
+  library(ggplot2)
+}
+
+# Creo gràfic Scatter plot
+scatter_plot <- ggplot(pisa_cleaned, aes(x = minutesPerWeekEnglish, y = readingScore)) +
+  geom_point(color = "blue") +
+  labs(x = "Minuts setmanals de lectura", y = "Puntuació de lectura en PISA") +  # Etiquetas de ejes
+  ggtitle("SCATTER PLOT") +  # Título del gráfico
+  theme_minimal() 
+
+# Mostro gràfic
+print(scatter_plot)
+```
+
+```{r}
+if (!require(hexbin)) {
+  install.packages("hexbin")
+  library(hexbin)
+}
+# Creo gràfic hexagonal binning
+hex_plot <- ggplot(pisa_cleaned, aes(x = minutesPerWeekEnglish, y = readingScore)) +
+  geom_hex() +  # Hexagonal binning
+  labs(x = "Minuts setmanals de lectura", y = "Puntuació de lectura en PISA") +  
+  ggtitle("HEXAGONAL BINNING") +  
+  theme_minimal()  
+
+# Mostro gràfic
+print(hex_plot)
+```
