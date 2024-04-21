@@ -5,5 +5,10 @@ Contingut de les carpetes:
 
 ## icon_chart
 
-Conté:
-la visualització estàtica de tipus Icon_Chart
+Conté els arxius:
+
+- **Dino_icon_chart.png**: és la visualització estàtica de tipus *Icon Chart* de la PAC.
+
+- **Dino_icon_chart.doc**: és el ficher anterior en format Word.
+
+- **Esbos_dino.jpg**: és l'esborrany inicial fet a mà de la idea original.
