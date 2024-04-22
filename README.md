@@ -7,14 +7,14 @@ L'arrel del repositori conté les següents carpetes:
 
 Conté els arxius:
 
-- **xxx.yyy**: és el codi Python que crea la visualització *sankey diagram* (executable amb Google Collab).
+- **xxx.yyy**: és el codi Python que crea la visualització *sankey diagram* (es pot executar amb Google Collab).
 
 
 ## hexagonal_binning
 
 Conté els arxius:
 
-- **PAC2_Hexagonal_Binning.Rmd**: és el codi R que crea la visualització *hexagonal binning* (Executable amb R Studio).
+- **PAC2_Hexagonal_Binning.Rmd**: és el codi R que crea la visualització *hexagonal binning* (es pot executar amb R Studio).
 
 - **PAC2_Hexagonal_Binning.html**: és la visualització HTML del fitxer anterior.
 
