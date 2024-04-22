@@ -9,6 +9,13 @@ Conté els arxius:
 
 - **VD_PAC2_Sankey.ipynb**: és el codi Python que crea la visualització *sankey diagram* (es pot executar amb Google Collab).
 
+## icon_chart
+
+Conté els arxius:
+
+- **Dino_icon_chart.png**: és la visualització estàtica de tipus *Icon Chart* de la PAC.
+
+- **Esbos_dino.jpg**: és l'esborrany inicial fet a mà de la idea original.
 
 ## hexagonal_binning
 
@@ -20,10 +27,4 @@ Conté els arxius:
 
 - **pisa2009-1.csv**: és el dataset PISA.
 
-## icon_chart
 
-Conté els arxius:
-
-- **Dino_icon_chart.png**: és la visualització estàtica de tipus *Icon Chart* de la PAC.
-
-- **Esbos_dino.jpg**: és l'esborrany inicial fet a mà de la idea original.
