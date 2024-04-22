@@ -1,7 +1,7 @@
 # PAC2_VD
 **PAC2 de Visualització de Dades (UOC) - Abril de 2024 - MIGUEL ÁNGEL RODRÍGUEZ BARRANCO**
 
-Contingut de les carpetes:
+L'arrel del repositori conté les següents carpetes:
 
 ## sankey_diagram
 
