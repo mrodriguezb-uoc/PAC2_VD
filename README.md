@@ -7,7 +7,7 @@ L'arrel del repositori conté les següents carpetes:
 
 Conté els arxius:
 
-- **xxx.yyy**: és el codi Python que crea la visualització *sankey diagram* (es pot executar amb Google Collab).
+- **VD_PAC2_Sankey.ipynb**: és el codi Python que crea la visualització *sankey diagram* (es pot executar amb Google Collab).
 
 
 ## hexagonal_binning
